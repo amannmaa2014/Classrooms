@@ -22,7 +22,17 @@
         <div class="col-md-6">
             <a href="{% url 'restaurant-delete' restaurant.id %}" class="btn btn-outline-danger btn-block">Delete</a>
         </div>
+        <div class="col-md-6">
+            <a href="{% url 'item-create' restaurant.id %}" class="btn btn-outline-danger btn-block">item create</a>
+        </div>
     </div>
   </div>
 </div>
+{% for item in restaurant.item.all %}
+<ul>
+<li>{{item.name}}</li>
+<li>{{item.description}}</li>
+<li>{{item.price}}</li>
+</ul>
+{% endfor %}
 {% endblock content %}
